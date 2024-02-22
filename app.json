@@ -1,9 +1,10 @@
 {
   "expo": {
-    "name": "taskmanagement",
-    "slug": "taskmanagement",
+    "name": "task-management",
+    "slug": "task-management",
+    "description": "Task management app",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -15,16 +16,37 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.taskmanagement",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-updates",
+        {
+          "username": "riza569"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "75901c2e-12ff-4a93-a28f-bb817fa01f2e"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/75901c2e-12ff-4a93-a28f-bb817fa01f2e"
     }
   }
 }
