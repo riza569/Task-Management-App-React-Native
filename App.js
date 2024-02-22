@@ -7,27 +7,10 @@ import HomeScreen from "./screens/HomeScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { TaskProvider } from "./components/TaskContext";
 import Ionicon from "@expo/vector-icons/Ionicons";
-import * as Updates from "expo-updates";
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-  async function onFetchUpdateAsync() {
-    try {
-      const update = await Updates.checkForUpdateAsync();
-
-      if (update.isAvailable) {
-        await Updates.fetchUpdateAsync();
-        await Updates.reloadAsync();
-      }
-    } catch (error) {
-      // You can also add an alert() to see the error message in case of an error when fetching updates.
-      alert(`Error fetching latest Expo update: ${error}`);
-    }
-  }
-  useEffect(() => {
-    onFetchUpdateAsync();
-  }, []);
   return (
     <TaskProvider>
       <NavigationContainer>
